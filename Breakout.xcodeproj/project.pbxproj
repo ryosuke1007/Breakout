@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C20BF3D0214D257F004FFFCD /* line.png in Resources */ = {isa = PBXBuildFile; fileRef = C20BF3CF214D257F004FFFCD /* line.png */; };
 		C25F4656210C0BFE00A28C90 /* spark.sks in Resources */ = {isa = PBXBuildFile; fileRef = C25F4655210C0BFE00A28C90 /* spark.sks */; };
 		C2967345204A998D00B4F4E2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2967344204A998D00B4F4E2 /* AppDelegate.swift */; };
 		C2967347204A998D00B4F4E2 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = C2967346204A998D00B4F4E2 /* GameScene.sks */; };
@@ -16,12 +17,15 @@
 		C2967350204A998D00B4F4E2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C296734E204A998D00B4F4E2 /* Main.storyboard */; };
 		C2967352204A998D00B4F4E2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C2967351204A998D00B4F4E2 /* Assets.xcassets */; };
 		C2967355204A998D00B4F4E2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2967353204A998D00B4F4E2 /* LaunchScreen.storyboard */; };
-		C29DE528214CDD4400933B92 /* TitleScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29DE527214CDD4400933B92 /* TitleScene.swift */; };
+		C29DE52A214CEA8600933B92 /* TitleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29DE529214CEA8600933B92 /* TitleViewController.swift */; };
+		C29DE534214CF30000933B92 /* image.png in Resources */ = {isa = PBXBuildFile; fileRef = C29DE533214CF30000933B92 /* image.png */; };
+		C29DE536214CF40700933B92 /* スクリーンショット 2018-09-15 17.01.42.png in Resources */ = {isa = PBXBuildFile; fileRef = C29DE535214CF40700933B92 /* スクリーンショット 2018-09-15 17.01.42.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C20BF3CF214D257F004FFFCD /* line.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = line.png; sourceTree = "<group>"; };
 		C25F4655210C0BFE00A28C90 /* spark.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = spark.sks; sourceTree = "<group>"; };
-		C2967341204A998D00B4F4E2 /* Breakout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Breakout.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C2967341204A998D00B4F4E2 /* Breakout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = Breakout.app; path = "/Users/kimuraryousuke/Desktop/Breakout/build/Debug-iphoneos/Breakout.app"; sourceTree = "<absolute>"; };
 		C2967344204A998D00B4F4E2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C2967346204A998D00B4F4E2 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
 		C2967348204A998D00B4F4E2 /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
@@ -31,7 +35,9 @@
 		C2967351204A998D00B4F4E2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C2967354204A998D00B4F4E2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C2967356204A998D00B4F4E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C29DE527214CDD4400933B92 /* TitleScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleScene.swift; sourceTree = "<group>"; };
+		C29DE529214CEA8600933B92 /* TitleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleViewController.swift; sourceTree = "<group>"; };
+		C29DE533214CF30000933B92 /* image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image.png; sourceTree = "<group>"; };
+		C29DE535214CF40700933B92 /* スクリーンショット 2018-09-15 17.01.42.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "スクリーンショット 2018-09-15 17.01.42.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,16 +55,7 @@
 			isa = PBXGroup;
 			children = (
 				C2967343204A998D00B4F4E2 /* Breakout */,
-				C2967342204A998D00B4F4E2 /* Products */,
 			);
-			sourceTree = "<group>";
-		};
-		C2967342204A998D00B4F4E2 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				C2967341204A998D00B4F4E2 /* Breakout.app */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		C2967343204A998D00B4F4E2 /* Breakout */ = {
@@ -69,11 +66,14 @@
 				C2967348204A998D00B4F4E2 /* Actions.sks */,
 				C296734A204A998D00B4F4E2 /* GameScene.swift */,
 				C296734C204A998D00B4F4E2 /* GameViewController.swift */,
-				C29DE527214CDD4400933B92 /* TitleScene.swift */,
+				C29DE529214CEA8600933B92 /* TitleViewController.swift */,
 				C296734E204A998D00B4F4E2 /* Main.storyboard */,
 				C2967351204A998D00B4F4E2 /* Assets.xcassets */,
 				C2967353204A998D00B4F4E2 /* LaunchScreen.storyboard */,
 				C2967356204A998D00B4F4E2 /* Info.plist */,
+				C29DE533214CF30000933B92 /* image.png */,
+				C20BF3CF214D257F004FFFCD /* line.png */,
+				C29DE535214CF40700933B92 /* スクリーンショット 2018-09-15 17.01.42.png */,
 				C25F4655210C0BFE00A28C90 /* spark.sks */,
 			);
 			path = Breakout;
@@ -124,7 +124,7 @@
 				Base,
 			);
 			mainGroup = C2967338204A998D00B4F4E2;
-			productRefGroup = C2967342204A998D00B4F4E2 /* Products */;
+			productRefGroup = C2967338204A998D00B4F4E2;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -141,9 +141,12 @@
 				C2967350204A998D00B4F4E2 /* Main.storyboard in Resources */,
 				C25F4656210C0BFE00A28C90 /* spark.sks in Resources */,
 				C2967347204A998D00B4F4E2 /* GameScene.sks in Resources */,
+				C29DE534214CF30000933B92 /* image.png in Resources */,
+				C20BF3D0214D257F004FFFCD /* line.png in Resources */,
 				C2967352204A998D00B4F4E2 /* Assets.xcassets in Resources */,
 				C2967355204A998D00B4F4E2 /* LaunchScreen.storyboard in Resources */,
 				C2967349204A998D00B4F4E2 /* Actions.sks in Resources */,
+				C29DE536214CF40700933B92 /* スクリーンショット 2018-09-15 17.01.42.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -155,9 +158,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				C296734B204A998D00B4F4E2 /* GameScene.swift in Sources */,
+				C29DE52A214CEA8600933B92 /* TitleViewController.swift in Sources */,
 				C296734D204A998D00B4F4E2 /* GameViewController.swift in Sources */,
 				C2967345204A998D00B4F4E2 /* AppDelegate.swift in Sources */,
-				C29DE528214CDD4400933B92 /* TitleScene.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -295,6 +298,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = C5T6X73QK8;
 				INFOPLIST_FILE = Breakout/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Iitech.Breakout;
@@ -309,6 +313,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = C5T6X73QK8;
 				INFOPLIST_FILE = Breakout/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Iitech.Breakout;

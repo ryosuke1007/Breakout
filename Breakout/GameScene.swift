@@ -52,24 +52,16 @@ class GameScene: SKScene,SKPhysicsContactDelegate {
         scorelabel.text = String(score)
     }
     
-    
     @objc func timerUpdate() {
+        if isGameover {
+            return
+        }
         var newvelocity = (ball.physicsBody?.velocity)!
         if newvelocity.dx <= 800{
             newvelocity.dx *= 1.0001
         }
         if newvelocity.dy <= 800{
             newvelocity.dy *= 1.0001
-        }
-        else if isGameover == true {
-            newvelocity.dx *= 0
-            newvelocity.dy *= 0
-        }
-        if newvelocity.dx == 0 {
-            if newvelocity.dy == 0{
-                ball.physicsBody?.applyImpulse(CGVector(dx: 50, dy: 50))
-                print("1")
-            }
         }
         ball.physicsBody?.velocity = newvelocity
         time = time + 1
@@ -83,9 +75,11 @@ class GameScene: SKScene,SKPhysicsContactDelegate {
             
             if isGameover == true {
                 ball.position.x = touchLocation.x
-                ball.position.y = 0
+                ball.position.y = -450
                 self.addChild(ball)
                 score = 0
+//                ball.physicsBody?.applyImpulse(CGVector(dx: 50, dy: 50))
+                ball.physicsBody?.velocity = CGVector(dx: 312.5, dy: 312.5)
                 scorelabel.text = String(score)
                 gameoverlabel.text = ""
                 messagelabel.text = ""

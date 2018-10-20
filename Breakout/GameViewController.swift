@@ -52,4 +52,8 @@ class GameViewController: UIViewController {
     override var prefersStatusBarHidden: Bool {
         return true
     }
+    
+    @IBAction func back() {
+        self.dismiss(animated: true, completion: nil)
+    }
 }
