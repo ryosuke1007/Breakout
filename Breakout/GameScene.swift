@@ -10,7 +10,7 @@ import SpriteKit
 import GameplayKit
 
 class GameScene: SKScene,SKPhysicsContactDelegate {
-    var ball:SKSpriteNode!
+    var ball: SKSpriteNode!
     var paddle: SKSpriteNode!
     var time: Int = 0
     var count: Int = 0
@@ -29,7 +29,7 @@ class GameScene: SKScene,SKPhysicsContactDelegate {
         super.didMove(to: view)
         Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(GameScene.timerUpdate), userInfo: nil, repeats: true)
         ball = self.childNode(withName: "Ball") as! SKSpriteNode
-        ball.physicsBody?.applyImpulse(CGVector(dx: 50, dy: 50))
+        ball.physicsBody?.applyImpulse(CGVector(dx: 50, dy: 50)) //初速設定
         paddle = self.childNode(withName: "Paddle") as! SKSpriteNode
         scorelabel = self.childNode(withName: "Label") as! SKLabelNode
         gameoverlabel = self.childNode(withName: "gameoverlabel") as! SKLabelNode
@@ -47,6 +47,12 @@ class GameScene: SKScene,SKPhysicsContactDelegate {
             if child.name == "Brick" {
                 bricks.append(child)
             }
+        }
+        func didMoveToView(view: SKView) {
+            let backGround = SKSpriteNode(imageNamed:"星空.jpg")
+            backGround.position = CGPoint(x: self.size.width * 0.5, y: self.size.height * 0.5)
+            backGround.size = self.size
+            self.addChild(backGround)
         }
         
         scorelabel.text = String(score)
@@ -78,7 +84,7 @@ class GameScene: SKScene,SKPhysicsContactDelegate {
                 ball.position.y = -450
                 self.addChild(ball)
                 score = 0
-//                ball.physicsBody?.applyImpulse(CGVector(dx: 50, dy: 50))
+                ball.physicsBody?.applyImpulse(CGVector(dx: 50, dy: 50))
                 ball.physicsBody?.velocity = CGVector(dx: 312.5, dy: 312.5)
                 scorelabel.text = String(score)
                 gameoverlabel.text = ""
