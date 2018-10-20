@@ -27,7 +27,7 @@ class GameScene: SKScene,SKPhysicsContactDelegate {
     
     override func didMove(to view: SKView) {
         super.didMove(to: view)
-        Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(GameScene.timerUpdate), userInfo: nil, repeats: true)
+        Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(GameScene.timerUpdate), userInfo: nil, repeats: true)
         ball = self.childNode(withName: "Ball") as! SKSpriteNode
         ball.physicsBody?.applyImpulse(CGVector(dx: 50, dy: 50)) //初速設定
         paddle = self.childNode(withName: "Paddle") as! SKSpriteNode
@@ -48,15 +48,17 @@ class GameScene: SKScene,SKPhysicsContactDelegate {
                 bricks.append(child)
             }
         }
-        func didMoveToView(view: SKView) {
-            let backGround = SKSpriteNode(imageNamed:"星空.jpg")
-            backGround.position = CGPoint(x: self.size.width * 0.5, y: self.size.height * 0.5)
-            backGround.size = self.size
-            self.addChild(backGround)
-        }
         
         scorelabel.text = String(score)
     }
+    
+            func didMoveToView(view: SKView) {
+                let backGround = SKSpriteNode(imageNamed:"星空.jpg")
+                backGround.position = CGPoint(x: self.size.width * 0.5, y: self.size.height * 0.5)
+                backGround.size = self.size
+                self.addChild(backGround)
+            }
+
     
     @objc func timerUpdate() {
         if isGameover {
@@ -64,10 +66,10 @@ class GameScene: SKScene,SKPhysicsContactDelegate {
         }
         var newvelocity = (ball.physicsBody?.velocity)!
         if newvelocity.dx <= 800{
-            newvelocity.dx *= 1.0001
+            newvelocity.dx *= 1.01
         }
         if newvelocity.dy <= 800{
-            newvelocity.dy *= 1.0001
+            newvelocity.dy *= 1.01
         }
         ball.physicsBody?.velocity = newvelocity
         time = time + 1
@@ -84,7 +86,7 @@ class GameScene: SKScene,SKPhysicsContactDelegate {
                 ball.position.y = -450
                 self.addChild(ball)
                 score = 0
-                ball.physicsBody?.applyImpulse(CGVector(dx: 50, dy: 50))
+            //    ball.physicsBody?.applyImpulse(CGVector(dx: 50, dy: 50))
                 ball.physicsBody?.velocity = CGVector(dx: 312.5, dy: 312.5)
                 scorelabel.text = String(score)
                 gameoverlabel.text = ""
