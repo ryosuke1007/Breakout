@@ -9,8 +9,9 @@
 import SpriteKit
 import GameplayKit
 
-class GameScene: SKScene,SKPhysicsContactDelegate {
-    var ball:SKSpriteNode!
+final class GameScene: SKScene,SKPhysicsContactDelegate {
+    
+//    var ball:SKSpriteNode! //ここでballを定義
     var paddle: SKSpriteNode!
     var time: Int = 0
     var count: Int = 0
@@ -22,14 +23,16 @@ class GameScene: SKScene,SKPhysicsContactDelegate {
     var gameoverlabel: SKLabelNode!
     var messagelabel: SKLabelNode!
     var gamescorelabel: SKLabelNode!
-    
-    
+    var objectiveBall: Ball!
     
     override func didMove(to view: SKView) {
         super.didMove(to: view)
         Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(GameScene.timerUpdate), userInfo: nil, repeats: true)
-        ball = self.childNode(withName: "Ball") as! SKSpriteNode
-        ball.physicsBody?.applyImpulse(CGVector(dx: 50, dy: 50))
+//        ball = self.childNode(withName: "Ball") as! SKSpriteNode
+//        ball.physicsBody?.applyImpulse(CGVector(dx: 50, dy: 50))//初速を与えてるよ
+//        ball1.setUp()
+        objectiveBall = self.childNode(withName: "Ball") as? Ball!
+        objectiveBall.setUp()
         paddle = self.childNode(withName: "Paddle") as! SKSpriteNode
         scorelabel = self.childNode(withName: "Label") as! SKLabelNode
         gameoverlabel = self.childNode(withName: "gameoverlabel") as! SKLabelNode
@@ -56,14 +59,14 @@ class GameScene: SKScene,SKPhysicsContactDelegate {
         if isGameover {
             return
         }
-        var newvelocity = (ball.physicsBody?.velocity)!
+        var newvelocity = (objectiveBall?.physicsBody?.velocity)!
         if newvelocity.dx <= 800{
             newvelocity.dx *= 1.0001
         }
         if newvelocity.dy <= 800{
             newvelocity.dy *= 1.0001
         }
-        ball.physicsBody?.velocity = newvelocity
+        objectiveBall!.physicsBody!.velocity = newvelocity
         time = time + 1
         
     }
@@ -73,13 +76,15 @@ class GameScene: SKScene,SKPhysicsContactDelegate {
             let touchLocation = touch.location(in: self)
             paddle.position.x = touchLocation.x
             
-            if isGameover == true {
-                ball.position.x = touchLocation.x
-                ball.position.y = -450
-                self.addChild(ball)
+            if isGameover {
+//                objectiveBall!.position.x = touchLocation.x
+//                objectiveBall!.position.y = -450
+                objectiveBall.positionSet(x: touchLocation.x, y: -450) //ここは変更
+                self.addChild(objectiveBall!)
                 score = 0
-//                ball.physicsBody?.applyImpulse(CGVector(dx: 50, dy: 50))
-                ball.physicsBody?.velocity = CGVector(dx: 312.5, dy: 312.5)
+//                objectiveBall.physicsBody?.applyImpulse(CGVector(dx: 50, dy: 50))
+//                objectiveBall.physicsBody?.velocity = CGVector(dx: 312.5, dy: 312.5)
+                objectiveBall.initPosition()    //ここも変更したよ
                 scorelabel.text = String(score)
                 gameoverlabel.text = ""
                 messagelabel.text = ""
@@ -107,7 +112,7 @@ class GameScene: SKScene,SKPhysicsContactDelegate {
         let bodyAName = contact.bodyA.node?.name
         let bodyBName = contact.bodyB.node?.name
         
-        if bodyAName == "Wall" && bodyBName == "Ball" || bodyAName == "Ball" && bodyBName == "Wall"{
+        if bodyAName == "Wall" && bodyBName == "Ball" || bodyAName == "Ball" && bodyBName == "Wall" {
             if bodyAName == "Ball" {
                 contact.bodyA.node?.removeFromParent()
                 let particle = SKEmitterNode(fileNamed: "spark.sks" )
