@@ -27,12 +27,18 @@ class GameScene: SKScene,SKPhysicsContactDelegate {
     
     
     override func didMove(to view: SKView) {
-        super.didMove(to: view)
-        Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(GameScene.timerUpdate), userInfo: nil, repeats: true)
         //  ball = self.childNode(withName: "Ball") as! SKSpriteNode
         //  ball.physicsBody?.applyImpulse(CGVector(dx: 50, dy: 50)) //初速設定
+        
+        //ここの二行で1個目のボールセットアップ
         objectiveBall = self.childNode(withName: "Ball") as? Ball!
         objectiveBall.setUp()
+        
+        //ここで二個目のボールだけを定義
+        secondBall = self.childNode(withName: "SecondBall") as? Ball!
+        //ボールを見えないように設定
+        secondBall.isHidden = true
+        
         paddle = self.childNode(withName: "Paddle") as! SKSpriteNode
         scorelabel = self.childNode(withName: "Label") as! SKLabelNode
         gameoverlabel = self.childNode(withName: "gameoverlabel") as! SKLabelNode
@@ -55,29 +61,6 @@ class GameScene: SKScene,SKPhysicsContactDelegate {
         scorelabel.text = String(score)
     }
     
-    @objc func timerUpdate() {
-        if isGameover == 0 {
-            return
-        }
-        var newvelocity = (objectiveBall.physicsBody?.velocity)!
-        if newvelocity.dx <= 800{
-            newvelocity.dx *= 1.01
-        }
-        if newvelocity.dy <= 800{
-            newvelocity.dy *= 1.01
-        }
-        objectiveBall!.physicsBody!.velocity = newvelocity
-        var newvelocity = (secondBall.physicsBody?.velocity)!
-        if newvelocity.dx <= 800{
-            newvelocity.dx *= 1.01
-        }
-        if newvelocity.dy <= 800{
-            newvelocity.dy *= 1.01
-        }
-        secondBall!.physicsBody!.velocity = newvelocity
-        time = time + 1
-        
-    }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         for touch in touches {
@@ -89,20 +72,24 @@ class GameScene: SKScene,SKPhysicsContactDelegate {
                 //    ball.position.y = -450
                 objectiveBall.positionSet(x: touchLocation.x, y: -450)
                 self.addChild(objectiveBall!)
+                //ここで二個目のボールだけを定義
+                secondBall = self.childNode(withName: "SecondBall") as? Ball
+                secondBall.positionSet(x: 0, y: -450)
+                self.addChild(secondBall!)
+                secondBall.isHidden = false
                 score = 0
                 //    ball.physicsBody?.applyImpulse(CGVector(dx: 50, dy: 50))
                 //    ball.physicsBody?.velocity = CGVector(dx: 312.5, dy: 312.5)
                 //    scorelabel.text = String(score)
                 objectiveBall.initPosition()
+//                secondBall.initPosition()/
                 gameoverlabel.text = ""
                 messagelabel.text = ""
                 gamescorelabel.text = ""
                 for Brick in bricks {
                     self.addChild(Brick)
                 }
-                isGameover = isGameover + 1
-                
-                
+                isGameover = 2
             }
         }
     }
@@ -136,6 +123,7 @@ class GameScene: SKScene,SKPhysicsContactDelegate {
                     messagelabel.text = "Your score is"
                     gamescorelabel.text = String(score)
                     count = 0
+                    objectiveBall.reset()
                     for Brick in bricks {
                         Brick.removeFromParent() }
                 }
@@ -156,6 +144,7 @@ class GameScene: SKScene,SKPhysicsContactDelegate {
                     messagelabel.text = "Your score is"
                     gamescorelabel.text = String(score)
                     count = 0
+                    objectiveBall.reset()
                     for Brick in bricks {
                         Brick.removeFromParent() }
                 }
@@ -180,6 +169,8 @@ class GameScene: SKScene,SKPhysicsContactDelegate {
                     messagelabel.text = "Your score is"
                     gamescorelabel.text = String(score)
                     count = 0
+                    secondBall.reset()
+                    secondBall = nil
                     for Brick in bricks {
                         Brick.removeFromParent() }
                 }
@@ -200,6 +191,8 @@ class GameScene: SKScene,SKPhysicsContactDelegate {
                     messagelabel.text = "Your score is"
                     gamescorelabel.text = String(score)
                     count = 0
+                    secondBall.reset()
+                    secondBall = nil
                     for Brick in bricks {
                         Brick.removeFromParent() }
                 }
@@ -273,7 +266,8 @@ class GameScene: SKScene,SKPhysicsContactDelegate {
                 }
             }
             if score == 50 {
-                secondBall = self.childNode(withName: "SecondBall") as? Ball!
+                //ボールが見えるようになった
+                secondBall.isHidden = false
                 secondBall.setUp()
                 secondBall.positionSet(x: 0, y: -450)
                 isGameover = isGameover + 1
