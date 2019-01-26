@@ -7,10 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C211469E21C4E05C00A653BC /* 円.png in Resources */ = {isa = PBXBuildFile; fileRef = C211469D21C4E05B00A653BC /* 円.png */; };
-		C2165EDD21C5104300023E99 /* TitleScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = C2165EDC21C5104300023E99 /* TitleScene.sks */; };
 		C25F4656210C0BFE00A28C90 /* spark.sks in Resources */ = {isa = PBXBuildFile; fileRef = C25F4655210C0BFE00A28C90 /* spark.sks */; };
-		C266E4CF21FC3F9300D4A423 /* sperk画像.png in Resources */ = {isa = PBXBuildFile; fileRef = C266E4CE21FC3F9300D4A423 /* sperk画像.png */; };
 		C291BE43219FE9CB00EEE5C2 /* 宇宙.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C291BE42219FE9CB00EEE5C2 /* 宇宙.jpg */; };
 		C2967345204A998D00B4F4E2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2967344204A998D00B4F4E2 /* AppDelegate.swift */; };
 		C2967347204A998D00B4F4E2 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = C2967346204A998D00B4F4E2 /* GameScene.sks */; };
@@ -22,16 +19,14 @@
 		C2967355204A998D00B4F4E2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2967353204A998D00B4F4E2 /* LaunchScreen.storyboard */; };
 		C29DE52A214CEA8600933B92 /* TitleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29DE529214CEA8600933B92 /* TitleViewController.swift */; };
 		C29DE534214CF30000933B92 /* image.png in Resources */ = {isa = PBXBuildFile; fileRef = C29DE533214CF30000933B92 /* image.png */; };
+		C29DE536214CF40700933B92 /* スクリーンショット 2018-09-15 17.01.42.png in Resources */ = {isa = PBXBuildFile; fileRef = C29DE535214CF40700933B92 /* スクリーンショット 2018-09-15 17.01.42.png */; };
 		C2A9413B218D868B00259F58 /* ScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A9413A218D868B00259F58 /* ScoreViewController.swift */; };
 		C2B7B7A2217B21BF00EAD4F4 /* Ball.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B7B7A1217B21BF00EAD4F4 /* Ball.swift */; };
-		C2C9D6D321C516A9006503E5 /* TitleScence.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C9D6D221C516A9006503E5 /* TitleScence.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		C211469D21C4E05B00A653BC /* 円.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "円.png"; path = "../../../円.png"; sourceTree = "<group>"; };
-		C2165EDC21C5104300023E99 /* TitleScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = TitleScene.sks; sourceTree = "<group>"; };
 		C25F4655210C0BFE00A28C90 /* spark.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = spark.sks; sourceTree = "<group>"; };
-		C266E4CE21FC3F9300D4A423 /* sperk画像.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sperk画像.png"; sourceTree = "<group>"; };
+		C273FA9B21C4D2A9000D881F /* 円.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "円.png"; sourceTree = "<group>"; };
 		C291BE42219FE9CB00EEE5C2 /* 宇宙.jpg */ = {isa = PBXFileReference; explicitFileType = image.png; path = "宇宙.jpg"; sourceTree = "<group>"; };
 		C2967344204A998D00B4F4E2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C2967346204A998D00B4F4E2 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -44,10 +39,10 @@
 		C2967356204A998D00B4F4E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C29DE529214CEA8600933B92 /* TitleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleViewController.swift; sourceTree = "<group>"; };
 		C29DE533214CF30000933B92 /* image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image.png; sourceTree = "<group>"; };
+		C29DE535214CF40700933B92 /* スクリーンショット 2018-09-15 17.01.42.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "スクリーンショット 2018-09-15 17.01.42.png"; sourceTree = "<group>"; };
 		C2A9413A218D868B00259F58 /* ScoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreViewController.swift; sourceTree = "<group>"; };
 		C2B7B7A0217AFEAC00EAD4F4 /* Breakout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Breakout.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2B7B7A1217B21BF00EAD4F4 /* Ball.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ball.swift; sourceTree = "<group>"; };
-		C2C9D6D221C516A9006503E5 /* TitleScence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleScence.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,10 +60,8 @@
 			isa = PBXGroup;
 			children = (
 				C2967346204A998D00B4F4E2 /* GameScene.sks */,
-				C2165EDC21C5104300023E99 /* TitleScene.sks */,
 				C2967348204A998D00B4F4E2 /* Actions.sks */,
 				C296734A204A998D00B4F4E2 /* GameScene.swift */,
-				C2C9D6D221C516A9006503E5 /* TitleScence.swift */,
 				C2B7B7A1217B21BF00EAD4F4 /* Ball.swift */,
 			);
 			path = Scence;
@@ -88,11 +81,11 @@
 		C23A84D6218DBEE50013E06D /* image */ = {
 			isa = PBXGroup;
 			children = (
-				C266E4CE21FC3F9300D4A423 /* sperk画像.png */,
+				C273FA9B21C4D2A9000D881F /* 円.png */,
 				C291BE42219FE9CB00EEE5C2 /* 宇宙.jpg */,
-				C211469D21C4E05B00A653BC /* 円.png */,
 				C2967351204A998D00B4F4E2 /* Assets.xcassets */,
 				C29DE533214CF30000933B92 /* image.png */,
+				C29DE535214CF40700933B92 /* スクリーンショット 2018-09-15 17.01.42.png */,
 				C25F4655210C0BFE00A28C90 /* spark.sks */,
 			);
 			path = image;
@@ -178,16 +171,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C211469E21C4E05C00A653BC /* 円.png in Resources */,
-				C266E4CF21FC3F9300D4A423 /* sperk画像.png in Resources */,
 				C2967350204A998D00B4F4E2 /* Main.storyboard in Resources */,
 				C25F4656210C0BFE00A28C90 /* spark.sks in Resources */,
 				C2967347204A998D00B4F4E2 /* GameScene.sks in Resources */,
 				C29DE534214CF30000933B92 /* image.png in Resources */,
-				C2165EDD21C5104300023E99 /* TitleScene.sks in Resources */,
 				C2967352204A998D00B4F4E2 /* Assets.xcassets in Resources */,
 				C2967355204A998D00B4F4E2 /* LaunchScreen.storyboard in Resources */,
 				C2967349204A998D00B4F4E2 /* Actions.sks in Resources */,
+				C29DE536214CF40700933B92 /* スクリーンショット 2018-09-15 17.01.42.png in Resources */,
 				C291BE43219FE9CB00EEE5C2 /* 宇宙.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -199,7 +190,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C2C9D6D321C516A9006503E5 /* TitleScence.swift in Sources */,
 				C296734B204A998D00B4F4E2 /* GameScene.swift in Sources */,
 				C29DE52A214CEA8600933B92 /* TitleViewController.swift in Sources */,
 				C2B7B7A2217B21BF00EAD4F4 /* Ball.swift in Sources */,

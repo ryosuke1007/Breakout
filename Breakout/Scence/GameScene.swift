@@ -59,6 +59,8 @@ class GameScene: SKScene,SKPhysicsContactDelegate {
         }
         isGameover = isGameover + 1
         scorelabel.text = String(score)
+        
+        self.scaleMode = .aspectFit
     }
     
     
@@ -68,21 +70,14 @@ class GameScene: SKScene,SKPhysicsContactDelegate {
             paddle.position.x = touchLocation.x
             
             if isGameover == 0 {
-                //    ball.position.x = touchLocation.x
-                //    ball.position.y = -450
                 objectiveBall.positionSet(x: touchLocation.x, y: -450)
                 self.addChild(objectiveBall!)
                 //ここで二個目のボールだけを定義
-                secondBall = self.childNode(withName: "SecondBall") as? Ball
                 secondBall.positionSet(x: 0, y: -450)
                 self.addChild(secondBall!)
                 secondBall.isHidden = false
                 score = 0
-                //    ball.physicsBody?.applyImpulse(CGVector(dx: 50, dy: 50))
-                //    ball.physicsBody?.velocity = CGVector(dx: 312.5, dy: 312.5)
-                //    scorelabel.text = String(score)
                 objectiveBall.initPosition()
-//                secondBall.initPosition()/
                 gameoverlabel.text = ""
                 messagelabel.text = ""
                 gamescorelabel.text = ""
@@ -123,6 +118,7 @@ class GameScene: SKScene,SKPhysicsContactDelegate {
                     messagelabel.text = "Your score is"
                     gamescorelabel.text = String(score)
                     count = 0
+                    score = 0
                     objectiveBall.reset()
                     for Brick in bricks {
                         Brick.removeFromParent() }
@@ -140,13 +136,14 @@ class GameScene: SKScene,SKPhysicsContactDelegate {
                 self.addChild(particle!)
                 particle!.run(actionAll)
                 if isGameover == 0 {
-                    gameoverlabel.text = "GAMEOVER"
-                    messagelabel.text = "Your score is"
-                    gamescorelabel.text = String(score)
-                    count = 0
-                    objectiveBall.reset()
-                    for Brick in bricks {
-                        Brick.removeFromParent() }
+//                    gameoverlabel.text = "GAMEOVER"
+//                    messagelabel.text = "Your score is"
+//                    gamescorelabel.text = String(score)
+//                    count = 0
+//                    score = 0
+//                    objectiveBall.reset()
+//                    for Brick in bricks {
+//                        Brick.removeFromParent() }
                 }
                 
                 
@@ -169,6 +166,7 @@ class GameScene: SKScene,SKPhysicsContactDelegate {
                     messagelabel.text = "Your score is"
                     gamescorelabel.text = String(score)
                     count = 0
+                    score = 0
                     secondBall.reset()
                     secondBall = nil
                     for Brick in bricks {
@@ -191,10 +189,13 @@ class GameScene: SKScene,SKPhysicsContactDelegate {
                     messagelabel.text = "Your score is"
                     gamescorelabel.text = String(score)
                     count = 0
-                    secondBall.reset()
-                    secondBall = nil
-                    for Brick in bricks {
-                        Brick.removeFromParent() }
+                    score = 0
+//                    secondBall.reset()
+//                    secondBall = nil
+//                    for Brick in bricks {
+//                        Brick.removeFromParent()
+                    
+//                    }
                 }
                 
                 
@@ -265,7 +266,7 @@ class GameScene: SKScene,SKPhysicsContactDelegate {
                     count = 0
                 }
             }
-            if score == 50 {
+            if isGameover == 1 {
                 //ボールが見えるようになった
                 secondBall.isHidden = false
                 secondBall.setUp()
