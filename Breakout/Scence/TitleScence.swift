@@ -19,7 +19,7 @@ class TitleScene: SKScene, SKPhysicsContactDelegate {
         startButton.position = CGPoint(x: 0/2, y: -self.frame.height/4)
         startButton.zPosition = 1
         startButton.name = "Start"
-//        self.addChild(startButton)
+        //        self.addChild(startButton)
         
     }
     
@@ -29,14 +29,14 @@ class TitleScene: SKScene, SKPhysicsContactDelegate {
             let location = touch.location(in: self)
             if self.atPoint(location).name == "Start" {
                 print("move")
-//                scene == GameScene(size: self.scene!.size)
-//                scene?.scaleMode = SKSceneScaleMode.aspectFill
-//                self.view!.presentScene(scene)
-                
-                if let scene = SKScene(fileNamed: "GameScene") {
-                    self.view?.presentScene(scene)
-                    self.scaleMode = .aspectFit
-                }
+                //                scene == GameScene(size: self.scene!.size)
+                //                scene?.scaleMode = SKSceneScaleMode.aspectFill
+                //                self.view!.presentScene(scene)
+            }
+            
+            if let scene = GameScene(fileNamed: "GameScene") {
+                scene.scaleMode = .aspectFill
+                self.view?.presentScene(scene)
             }
         }
     }
